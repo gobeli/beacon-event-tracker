@@ -36,7 +36,7 @@ function App() {
   const columns: GridColDef[] = [
     { field: 'id', headerName: 'ID', width: 70 },
     { field: 'type', headerName: 'Typ', width: 150, valueGetter: value => events[value] },
-    { field: 'createdAt', type: 'dateTime', headerName: 'Erstellt', flex: 1, valueGetter: value => new Date(value) },
+    { field: 'createdAt', type: 'dateTime', headerName: 'Erstellt', flex: 1, valueGetter: value => new Date(value), valueFormatter: (value: Date) => value.toISOString() },
     { 
       field: 'delete', 
       type: 'actions', 
